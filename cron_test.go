@@ -537,6 +537,12 @@ func TestScheduleAfterRemoval(t *testing.T) {
 
 type ZeroSchedule struct{}
 
+func (s *ZeroSchedule) Prev(t time.Time) time.Time {
+	//TODO implement me
+	//panic("implement me")
+	return time.Time{}
+}
+
 func (*ZeroSchedule) Next(time.Time) time.Time {
 	return time.Time{}
 }

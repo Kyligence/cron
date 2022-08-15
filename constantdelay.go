@@ -8,6 +8,12 @@ type ConstantDelaySchedule struct {
 	Delay time.Duration
 }
 
+func (schedule ConstantDelaySchedule) Prev(t time.Time) time.Time {
+	//TODO implement me
+	//panic("implement me")
+	return time.Time{}
+}
+
 // Every returns a crontab Schedule that activates once every duration.
 // Delays of less than a second are not supported (will round up to 1 second).
 // Any fields less than a Second are truncated.
