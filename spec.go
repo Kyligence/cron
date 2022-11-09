@@ -1,7 +1,6 @@
 package cron
 
 import (
-	"fmt"
 	"math/big"
 	"strconv"
 	"time"
@@ -247,7 +246,6 @@ WRAP:
 
 	for t.Year() < minYear || s.Year.Bit(t.Year()-minYear) == 0 {
 		addYear = true
-		fmt.Printf("t: %+v, result: %+v \n", t, s.Month.Bit(int(t.Month())))
 		if !added {
 			added = true
 			t = time.Date(t.Year(), 1, 1, 0, 0, 0, 0, loc)
@@ -268,7 +266,6 @@ WRAP:
 
 	for s.Month.Bit(int(t.Month())) == 0 {
 		addMonth = true
-		fmt.Printf("t: %+v, result: %+v \n", t, s.Month.Bit(int(t.Month())))
 		// If we have to add a month, reset the other parts to 0.
 		if !added {
 			added = true
